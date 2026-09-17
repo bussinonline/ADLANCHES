@@ -2134,6 +2134,49 @@
   color:var(--orange);
   font-size:18px;
 }
+
+/* ===== RODAPÉ: CENTRALIZAÇÃO DO ATENDIMENTO + LINKS LEGAIS ===== */
+.ad-footer .footer-card .social-row{
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+.ad-footer .footer-info-links .footer-legal-link{
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:#bbb;
+  font:inherit;
+  padding:4px 0;
+  cursor:pointer;
+}
+.ad-footer .footer-info-links .footer-legal-link:hover,
+.ad-footer .footer-info-links .footer-legal-link:focus-visible{
+  color:#fff;
+  text-decoration:underline;
+}
+.legal-modal-overlay{
+  position:fixed; inset:0; z-index:10000;
+  display:none; align-items:center; justify-content:center;
+  padding:20px; background:rgba(0,0,0,.78);
+}
+.legal-modal-overlay.is-open{display:flex;}
+.legal-modal{
+  width:min(760px,100%); max-height:82vh; overflow:auto;
+  background:#111; color:#eee; border:1px solid rgba(255,106,0,.65);
+  border-radius:18px; padding:24px; box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+.legal-modal-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px;}
+.legal-modal h3{margin:0;color:#ff7a18;font-size:24px;}
+.legal-modal h4{color:#ff9a45;margin:18px 0 6px;font-size:16px;}
+.legal-modal p,.legal-modal li{color:#d0d0d0;line-height:1.6;font-size:14px;}
+.legal-modal-close{
+  width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,106,0,.55);
+  background:#1a1a1a;color:#fff;font-size:24px;cursor:pointer;flex:0 0 42px;
+}
+@media(max-width:720px){
+  .legal-modal{padding:18px;max-height:86vh;}
+  .legal-modal h3{font-size:20px;}
+}
 @media(max-width:720px){
   .ad-footer .footer-blocks{grid-template-columns:1fr 1fr}
   .ad-footer .footer-card{padding:17px 12px}
@@ -2667,6 +2710,9 @@
     text-align: center !important;
   }
   #sobre .contact-map-large {
+    width: 100% !important;
+    max-width: 680px !important;
+    height: 220px !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
@@ -3177,7 +3223,6 @@
         <a class="nav-footer-link" href="#inicio"><span>Início</span><b>›</b></a>
         <a class="nav-footer-link" href="#cardapio"><span>Cardápio</span><b>›</b></a>
         <a class="nav-footer-link" href="#sobre"><span>Sobre</span><b>›</b></a>
-        <a class="nav-footer-link" href="#contato"><span>Contato</span><b>›</b></a>
       </div>
 
       <div class="footer-card">
@@ -3197,9 +3242,8 @@
     <div class="footer-transparency">
       <h4>🛡 Informações e Transparência</h4>
       <div class="footer-info-links">
-        <span>Política de Privacidade</span><i>|</i>
-        <span>Termos de Uso</span><i>|</i>
-        <span>Fale Conosco</span>
+        <button type="button" class="footer-legal-link" data-legal-open="privacy">Política de Privacidade</button><i>|</i>
+        <button type="button" class="footer-legal-link" data-legal-open="terms">Termos de Uso</button>
       </div>
     </div>
 
@@ -3215,10 +3259,33 @@
 
 
 
-  <a class="floating-whatsapp" target="_blank"
-     href="https://wa.me/5567999142483?text=🍔%20Olá,%20AD%20Lanches!%20Quero%20fazer%20um%20pedido." rel="noopener noreferrer">
-    💬
-  </a>
+
+
+
+  <!-- Informações legais do site -->
+  <div class="legal-modal-overlay" id="privacyModal" aria-hidden="true">
+    <section class="legal-modal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+      <div class="legal-modal-top"><h3 id="privacyTitle">Política de Privacidade</h3><button type="button" class="legal-modal-close" data-legal-close aria-label="Fechar">×</button></div>
+      <p><strong>Última atualização: setembro de 2026.</strong> Esta política explica, de forma simples, como o site da AD Lanches funciona em relação às informações do visitante.</p>
+      <h4>1. Dados e pedidos</h4><p>Este é um site estático e não possui cadastro de clientes nem banco de dados próprio para armazenar pedidos. Ao escolher fazer um pedido pelo WhatsApp, a conversa e os dados enviados passam a ser tratados no ambiente do WhatsApp.</p>
+      <h4>2. Carrinho no navegador</h4><p>Para facilitar a experiência, os itens adicionados ao carrinho podem ser guardados localmente no próprio navegador do usuário por meio do armazenamento local (localStorage). Essas informações permanecem no dispositivo/navegador e podem ser apagadas ao limpar os dados do site.</p>
+      <h4>3. Serviços de terceiros</h4><p>O site pode abrir ou incorporar serviços externos, como WhatsApp, Instagram e Google Maps. Ao utilizar esses serviços, aplicam-se também as políticas e condições das respectivas plataformas.</p>
+      <h4>4. Segurança e responsabilidade</h4><p>A AD Lanches procura manter o site funcional e seguro. Evite enviar informações sensíveis que não sejam necessárias para realizar seu pedido.</p>
+      <h4>5. Alterações</h4><p>Esta política poderá ser atualizada quando houver mudanças no funcionamento do site ou nos serviços utilizados.</p>
+    </section>
+  </div>
+
+  <div class="legal-modal-overlay" id="termsModal" aria-hidden="true">
+    <section class="legal-modal" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+      <div class="legal-modal-top"><h3 id="termsTitle">Termos de Uso</h3><button type="button" class="legal-modal-close" data-legal-close aria-label="Fechar">×</button></div>
+      <p><strong>Última atualização: setembro de 2026.</strong> Ao utilizar este site, o visitante concorda com as condições abaixo.</p>
+      <h4>1. Finalidade do site</h4><p>O site apresenta o cardápio e facilita a montagem do pedido da AD Lanches. A finalização do atendimento e do pedido ocorre pelo WhatsApp.</p>
+      <h4>2. Preços e disponibilidade</h4><p>Produtos, adicionais, preços, horários e disponibilidade podem ser atualizados. Em caso de divergência, as informações confirmadas pela AD Lanches durante o atendimento prevalecem para a conclusão do pedido.</p>
+      <h4>3. Links externos</h4><p>Links para WhatsApp, Instagram e Google Maps direcionam para serviços de terceiros, que possuem seus próprios termos e políticas.</p>
+      <h4>4. Uso adequado</h4><p>O visitante se compromete a utilizar o site de forma lícita, sem tentar interferir no funcionamento, segurança ou conteúdo da página.</p>
+      <h4>5. Conteúdo</h4><p>Textos, identidade visual, imagens e demais elementos apresentados no site destinam-se à divulgação da AD Lanches e não devem ser reutilizados indevidamente.</p>
+    </section>
+  </div>
 
   <!-- Página interna do produto (continua 100% estática, dentro do mesmo HTML) -->
   <div class="modal-overlay product-page-overlay" id="productModal" aria-hidden="true">
@@ -4126,6 +4193,22 @@ _Enviado pelo site AD Lanches_`;
       });
     }, true);
   }
+})();
+</script>
+
+
+<script>
+(function(){
+  const modalMap={privacy:document.getElementById('privacyModal'),terms:document.getElementById('termsModal')};
+  function closeLegal(modal){if(!modal)return;modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');}
+  document.querySelectorAll('[data-legal-open]').forEach(btn=>btn.addEventListener('click',()=>{
+    const modal=modalMap[btn.dataset.legalOpen]; if(!modal)return;
+    modal.classList.add('is-open'); modal.setAttribute('aria-hidden','false');
+    const close=modal.querySelector('[data-legal-close]'); if(close) close.focus();
+  }));
+  document.querySelectorAll('[data-legal-close]').forEach(btn=>btn.addEventListener('click',()=>closeLegal(btn.closest('.legal-modal-overlay'))));
+  document.querySelectorAll('.legal-modal-overlay').forEach(modal=>modal.addEventListener('click',e=>{if(e.target===modal)closeLegal(modal);}));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.legal-modal-overlay.is-open').forEach(closeLegal);});
 })();
 </script>
 

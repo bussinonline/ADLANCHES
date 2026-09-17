@@ -2189,17 +2189,33 @@
       header .container { width: min(1380px, calc(100% - 48px)) !important; }
       header .nav { min-height: 104px !important; gap: 28px !important; }
       header .brand { min-width: 350px !important; gap: 16px !important; margin-left: -8px !important; }
-      header .brand-mark { width: 78px !important; height: 78px !important; flex: 0 0 78px !important; }
-      header .brand strong { font-size: 32px !important; letter-spacing: .2px !important; line-height: .98 !important; }
+      header .brand-mark { width: 84px !important; height: 84px !important; flex: 0 0 84px !important; }
+      header .brand strong { font-size: 35px !important; letter-spacing: .2px !important; line-height: .98 !important; }
       header .brand-subtitle { display: block !important; font-size: 11px !important; margin-top: 6px !important; letter-spacing: 1.55px !important; }
       header .brand small { display: none !important; }
       header .brand-status { display: none !important; }
-      header .nav-links { gap: 30px !important; font-size: 16px !important; font-weight: 700 !important; }
+      header .nav-links { gap: 30px !important; font-size: 18px !important; font-weight: 700 !important; }
       header .nav-actions { gap: 14px !important; }
       header .status { display: inline-block !important; font-size: 14px !important; font-weight: 900 !important; }
       header .nav-actions .btn { min-height: 52px !important; padding: 0 20px !important; font-size: 15px !important; border-radius: 14px !important; }
       header .cart-btn { width: auto !important; height: auto !important; min-height: 52px !important; padding: 0 19px !important; font-size: 15px !important; border-radius: 14px !important; }
       header .cart-icon { font-size: 20px !important; }
+      header .cart-btn { position: relative !important; overflow: visible !important; }
+      header .cart-count {
+        display: grid !important;
+        position: absolute !important;
+        top: -10px !important;
+        right: -10px !important;
+        z-index: 60 !important;
+        min-width: 24px !important;
+        height: 24px !important;
+        padding: 0 5px !important;
+        box-sizing: border-box !important;
+        border-radius: 999px !important;
+        place-items: center !important;
+        font-size: 12px !important;
+        line-height: 1 !important;
+      }
     }
 </style>
 
